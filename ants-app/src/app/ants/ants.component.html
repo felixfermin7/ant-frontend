@@ -1,0 +1,10 @@
+<h2>Mis Hormigas</h2>
+<ul class="ants">
+    <li *ngFor="let ant of ants"
+        [class.selected]="ant === selectedAnt"
+        (click)="onSelect(ant)">
+        <span class="badge">{{ant.id}}</span> {{ant.name}}
+    </li>
+</ul>
+
+<app-ant-detail [ant]="selectedAnt"></app-ant-detail>
