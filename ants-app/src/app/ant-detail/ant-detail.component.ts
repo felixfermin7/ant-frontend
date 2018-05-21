@@ -35,4 +35,9 @@ export class AntDetailComponent implements OnInit {
     this.location.back();
   }
 
+  save(): void {
+    this.antService.updateAnt(this.ant)
+        .subscribe(() => this.goBack());
+  }
+
 }

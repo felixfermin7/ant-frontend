@@ -1,8 +1,20 @@
+<div>
+    <label>Ant name:
+        <input #antName />
+    </label>
+    <!-- (click) passes input value to add() and then clears the input -->
+    <button (click)="add(antName.value); antName.value=''">
+        Agregar
+    </button>
+</div>
+
 <h2>Mis Hormigas</h2>
 <ul class="ants">
     <li *ngFor="let ant of ants">
         <a routerLink="/detail/{{ant.id}}">
             <span class="badge">{{ant.id}}</span> {{ant.name}}
         </a>
+        <button class="delete" title="Borrar"
+                (click)="delete(ant)">x</button>
     </li>
 </ul>

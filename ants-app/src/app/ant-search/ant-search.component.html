@@ -1,0 +1,13 @@
+<div id="search-component">
+  <h4>Buscar Hormiga</h4>
+
+  <input #searchBox id="search-box" (keyup)="search(searchBox.value)" />
+
+  <ul class="search-result">
+    <li *ngFor="let ant of ants$ | async" >
+      <a routerLink="/detail/{{ant.id}}">
+        {{ant.name}}
+      </a>
+    </li>
+  </ul>
+</div>
