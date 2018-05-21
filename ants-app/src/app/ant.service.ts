@@ -12,11 +12,18 @@ import { MessageService } from './message.service';
 })
 export class AntService {
 
+  constructor(private messageService: MessageService) { }
+
   getAnts(): Observable<Ant[]> {
     // TODO: send the message _after_ fetching the ants
     this.messageService.add('AntService: fetched ants')
     return of(ANTS);
   }
 
-  constructor(private messageService: MessageService) { }
+  getAnt(id: number): Observable<Ant> {
+    // TODO: send the message _after_ fetching the hero
+    this.messageService.add(`AntService: fetched ant id=${id}`);
+    return of(ANTS.find(ant => ant.id === id));
+  }
+
 }

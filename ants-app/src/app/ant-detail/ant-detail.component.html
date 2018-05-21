@@ -1,6 +1,6 @@
 <div *ngIf="ant">
-
-  <h2>{{ ant.name | uppercase }} Details</h2>
+  <button (click)="goBack()">Atrás</button>
+  <h2>{{ ant.name | uppercase }} Detalles</h2>
   <div><span>id: </span>{{ant.id}}</div>
   <div>
     <label>name:

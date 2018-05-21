@@ -12,17 +12,10 @@ export class AntsComponent implements OnInit {
 
   ants: Ant[];
 
-  selectedAnt: Ant;
-
-
   constructor(private antService : AntService) { }
 
   ngOnInit() {
     this.getAnts();
-  }
-
-  onSelect(ant: Ant): void {
-    this.selectedAnt = ant;
   }
 
   getAnts(): void {
